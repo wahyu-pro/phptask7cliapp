@@ -1,0 +1,19 @@
+{
+    "name": "cli-app/cli-app",
+    "description": "Todo Cli App",
+    "authors": [
+        {
+            "name": "Wahyu Wibowo",
+            "email": "wahyuoxs135@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Console\\" : "src"
+        },
+        "classmap": ["src"]
+    }
+}
