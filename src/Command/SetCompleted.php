@@ -35,6 +35,8 @@ class SetCompleted extends Command
         if(file_put_contents("todo.json", $dataWrite)){
             $output->writeln("Message :Set completed success");
         }
+        $data = array_map(function($v){return $v['id']." ".$v['title']." ".($v['complete'] ? '[Done]' : '');}, $data["todos"]);
+        $output->writeln($data);
         return Command::SUCCESS;
     }
 }

@@ -23,12 +23,14 @@ class ClearCommand extends Command
         $dataJson = file_get_contents("todo.json");
         $data = json_decode($dataJson, true);
         $data['todos'] = [];
-        $output->writeln("Data berhasil di clear");
 
         $dataWrite = json_encode($data, JSON_PRETTY_PRINT);
         if(file_put_contents("todo.json", $dataWrite)){
-            $output->writeln("Message : data berhasil diupdate");
+            $output->writeln("Tidak ada todos");
+            $output->writeln("Message : data berhasil diclear");
         }
+        $data = array_map(function($v){return $v['id']." ".$v['title']." ".($v['complete'] ? '[Done]' : '');}, $data["todos"]);
+        $output->writeln($data);
         return Command::SUCCESS;
     }
 }

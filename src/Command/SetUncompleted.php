@@ -30,11 +30,12 @@ class SetUnCompleted extends Command
                 $data['todos'][$key]["complete"] = false;
             }
         }
-
         $dataWrite = json_encode($data, JSON_PRETTY_PRINT);
         if(file_put_contents("todo.json", $dataWrite)){
             $output->writeln("Message :Set uncompleted success");
         }
+        $data = array_map(function($v){return $v['id']." ".$v['title']." ".($v['complete'] ? '[Done]' : '');}, $data["todos"]);
+        $output->writeln($data);
         return Command::SUCCESS;
     }
 }
