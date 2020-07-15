@@ -13,7 +13,7 @@ class SetCompleted extends Command
 
     protected function configure()
     {
-        $this->setDescription("This  command should delete a todo item.")
+        $this->setDescription("This  command should done a todo item.")
             ->setName("done")
             ->addArgument("id", InputArgument::REQUIRED, "enter your id todo")
             ->setHelp("Input id for set completed");

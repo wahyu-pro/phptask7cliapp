@@ -9,12 +9,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 class ListCommand extends Command
 {
     // the name of the command (the part after "bin/console")
-    protected static $defaultName = 'list';
+    protected static $defaultName = 'show-list';
 
     protected function configure()
     {
         $this->setDescription("This command to show all todo items")
-            ->setName("list")
+            // ->setName("list")
             ->setHelp("Input List is required");
     }
 

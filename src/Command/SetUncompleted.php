@@ -13,7 +13,7 @@ class SetUnCompleted extends Command
 
     protected function configure()
     {
-        $this->setDescription("This  command should delete a todo item.")
+        $this->setDescription("This  command should undone a todo item.")
             ->setName("undone")
             ->addArgument("id", InputArgument::REQUIRED, "enter your id todo")
             ->setHelp("Input id for set completed");
