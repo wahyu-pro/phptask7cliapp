@@ -14,7 +14,6 @@ class ListCommand extends Command
     protected function configure()
     {
         $this->setDescription("This command to show all todo items")
-            // ->setName("list")
             ->setHelp("Input List is required");
     }
 
