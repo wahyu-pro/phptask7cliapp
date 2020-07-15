@@ -37,6 +37,8 @@ class SetCompleted extends Command
         }
         $data = array_map(function($v){return $v['id']." ".$v['title']." ".($v['complete'] ? '[Done]' : '');}, $data["todos"]);
         $output->writeln($data);
+        // $command = $this->getApplication()->find('show-list');
+
         return Command::SUCCESS;
     }
 }
