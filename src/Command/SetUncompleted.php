@@ -27,7 +27,7 @@ class SetUnCompleted extends Command
         $item = array_filter($data['todos'], function($v) use($id) {return($v["id"] == $id);});
         if($item){
             foreach ($item as $key => $value) {
-                $data['todos'][$key]["complete"] = "";
+                $data['todos'][$key]["complete"] = false;
             }
         }
 

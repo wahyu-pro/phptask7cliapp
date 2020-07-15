@@ -28,7 +28,7 @@ class AddCommand extends Command
         $add = [
             "id" => $generateId,
             "title" => $title,
-            "complete" => ""
+            "complete" => false
         ];
         array_push($data['todos'], $add);
         $dataWrite = json_encode($data, JSON_PRETTY_PRINT);

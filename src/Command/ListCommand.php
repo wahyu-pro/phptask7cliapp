@@ -21,7 +21,7 @@ class ListCommand extends Command
     {
         $dataJson = file_get_contents("todo.json");
         $data = json_decode($dataJson, true);
-        $data = array_map(function($v){return($v['id']." ".$v['title']." ".$v['complete']);}, $data["todos"]);
+        $data = array_map(function($v){return $v['id']." ".$v['title']." ".($v['complete'] ? '[Done]' : '');}, $data["todos"]);
         $output->writeln($data);
         return Command::SUCCESS;
     }
